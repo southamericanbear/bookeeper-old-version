@@ -14,3 +14,12 @@ router.get("/", async (req, res) => {
 });
 
 module.exports = router;
+
+router.get("/:id", async (req, res) => {
+  try {
+    const book = await Book.findById(req.params.id).populate("author").exec();
+    res.render("books/show", { book: book });
+  } catch {
+    res.redirect("/");
+  }
+});
