@@ -8,10 +8,14 @@
     </form>
 </div>
 <h2>Recently Added</h2>
-<div>
+<div class="recent-added-img">
+
     <% books.forEach(book => { %>
-    <a href="/books/<%= book.id %> "><img height="150" width="100" src="<%= book.coverImagePath %>"></a>
-    <div><%= book.title %> </div>
-    <div><%= book.author.name%> </div>
+    <div class="book">
+        <a href="/books/<%= book.id %> "><img height="150" width="100" src="<%= book.coverImagePath %>"></a>
+        <div><%= book.title %> </div>
+        <div><%= book.author.name%> </div>
+    </div>
     <% }) %>
+
 </div>
