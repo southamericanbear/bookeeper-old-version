@@ -6,6 +6,14 @@ const authorSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  authorImage: {
+    type: Buffer,
+    required: true,
+  },
+  authorImageType: {
+    type: String,
+    required: true,
+  },
 });
 
 authorSchema.pre("remove", function (next) {
@@ -18,6 +26,14 @@ authorSchema.pre("remove", function (next) {
       next();
     }
   });
+});
+
+authorSchema.virtual("authorImagePath").get(function () {
+  if (this.authorImage != null && this.authorImageType != null) {
+    return `data:${
+      this.authorImageType
+    };charset=utf-8;base64,${this.authorImage.toString("base64")}`;
+  }
 });
 
 module.exports = mongoose.model("Author", authorSchema);
