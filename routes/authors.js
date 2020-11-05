@@ -2,6 +2,8 @@ const express = require("express");
 const router = express.Router();
 const Author = require("../models/author");
 const Book = require("../models/book");
+const imageMimeTypes = ["image/jpeg", "image/png", "images/gif"];
+
 // All Authors Route
 router.get("/", async (req, res) => {
   let searchOptions = {};
@@ -25,6 +27,9 @@ router.post("/", async (req, res) => {
   const author = new Author({
     name: req.body.name,
   });
+
+  saveAuthorPhoto(author, req.body.cover);
+
   try {
     const newAuthor = await author.save();
     res.redirect(`authors/${author.id}`);
@@ -91,5 +96,14 @@ router.delete("/:id", async (req, res) => {
     }
   }
 });
+
+function saveAuthorPhoto(author, coverEncoded) {
+  if (coverEncoded == null) return;
+  const cover = JSON.parse(coverEncoded);
+  if (cover != null && imageMimeTypes.includes(cover.type)) {
+    author.authorImage = new Buffer.from(cover.data, "base64");
+    author.authorImageType = cover.type;
+  }
+}
 
 module.exports = router;

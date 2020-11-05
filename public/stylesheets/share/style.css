@@ -82,29 +82,35 @@ h2 {
   box-shadow: 0 0 0 0.2rem;
 }
 
-.recent-added-img {
+.recent-added-img, .author-container {
   margin-top: 30px;
   display: grid;
   justify-content: center;
   grid-gap: 2rem;
   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
 }
-.recent-added-img .book {
+.recent-added-img .book, .recent-added-img .author, .author-container .book, .author-container .author {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.recent-added-img .book img {
+.recent-added-img .book img, .recent-added-img .author img, .author-container .book img, .author-container .author img {
   width: 157px;
   height: 250px;
 }
-.recent-added-img .book .book-title {
+.recent-added-img .book .book-title, .recent-added-img .author .book-title, .author-container .book .book-title, .author-container .author .book-title {
   font-weight: 700;
   font-size: 1.5rem;
 }
-.recent-added-img .book .book-author {
+.recent-added-img .book .book-author, .recent-added-img .author .book-author, .author-container .book .book-author, .author-container .author .book-author {
   margin-bottom: 5px;
   font-weight: 700;
   font-size: 0.8rem;
   color: #68696bdc;
+}
+
+.author img {
+  width: 155px !important;
+  height: 220px !important;
+  border-radius: 15px;
 }
