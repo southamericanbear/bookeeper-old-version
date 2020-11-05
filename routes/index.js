@@ -10,7 +10,7 @@ router.get("/", async (req, res) => {
     books = [];
   }
 
-  res.render("index", { books: books });
+  res.render("index", { books: books, searchOptions: req.query });
 });
 
 module.exports = router;

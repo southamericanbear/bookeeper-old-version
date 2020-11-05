@@ -1,6 +1,17 @@
+<div class="search-bar">
+    <form action="/books" method="GET">
+        <div class="input-group input-group-lg">
+            <input type="text" class="form-control" aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-lg" style="font-family:Arial, FontAwesome" type="text" name="title"
+                value="<%= searchOptions.title %>" placeholder="&#xF002; Search" style="font-family:Arial, FontAwesome">
+        </div>
+    </form>
+</div>
 <h2>Recently Added</h2>
 <div>
     <% books.forEach(book => { %>
     <a href="/books/<%= book.id %> "><img height="150" width="100" src="<%= book.coverImagePath %>"></a>
+    <div><%= book.title %> </div>
+    <div><%= book.pageCount%> </div>
     <% }) %>
 </div>

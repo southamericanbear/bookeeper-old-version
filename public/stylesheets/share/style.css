@@ -11,7 +11,7 @@ body {
   border: 3px solid white;
   font-size: 2rem;
   padding: 10px;
-  margin-left: 70px;
+  margin-left: 110px;
   border-radius: 15px;
 }
 @media (max-width: 991px) {
@@ -30,7 +30,7 @@ body {
   justify-content: flex-end;
 }
 #navbarNav ul {
-  margin-right: 5% !important;
+  margin-right: 10% !important;
 }
 #navbarNav ul a {
   color: white !important;
@@ -58,4 +58,8 @@ body {
   width: 40px;
   height: 3px;
   margin: 10px 0px;
+}
+
+.search-bar {
+  margin: 25px auto;
 }
