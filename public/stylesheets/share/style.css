@@ -2,8 +2,13 @@ body {
   font-family: "Oswald", sans-serif;
 }
 
+h2 {
+  font-weight: 700;
+}
+
 .navbar {
   background-color: black !important;
+  font-weight: 700;
 }
 
 .navbar-brand {
@@ -78,12 +83,28 @@ body {
 }
 
 .recent-added-img {
-  border: solid 2px red;
+  margin-top: 30px;
   display: grid;
   justify-content: center;
   grid-gap: 2rem;
-  grid-template-columns: repeat(auto-fill, var(--book-cover-width));
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
 }
 .recent-added-img .book {
-  border: blue solid 2px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.recent-added-img .book img {
+  width: 157px;
+  height: 250px;
+}
+.recent-added-img .book .book-title {
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+.recent-added-img .book .book-author {
+  margin-bottom: 5px;
+  font-weight: 700;
+  font-size: 0.8rem;
+  color: #68696bdc;
 }
