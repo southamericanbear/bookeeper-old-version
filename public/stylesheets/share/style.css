@@ -63,3 +63,16 @@ body {
 .search-bar {
   margin: 25px auto;
 }
+
+.search-home-page {
+  border: solid 2px rgba(102, 102, 102, 0.562);
+}
+
+.search-home-page:focus {
+  outline: none !important;
+  color: #495057;
+  background-color: #fff;
+  border-color: #4d4d4d;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem;
+}

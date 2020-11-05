@@ -5,7 +5,11 @@ const Book = require("../models/book");
 router.get("/", async (req, res) => {
   let books;
   try {
-    books = await Book.find().sort({ createdAt: "desc" }).limit(10).exec();
+    books = await Book.find()
+      .populate("author")
+      .sort({ createdAt: "desc" })
+      .limit(10)
+      .exec();
   } catch {
     books = [];
   }
@@ -14,12 +18,3 @@ router.get("/", async (req, res) => {
 });
 
 module.exports = router;
-
-router.get("/:id", async (req, res) => {
-  try {
-    const book = await Book.findById(req.params.id).populate("author").exec();
-    res.render("books/show", { book: book });
-  } catch {
-    res.redirect("/");
-  }
-});
