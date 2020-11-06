@@ -10,7 +10,8 @@
     <% authors.forEach(author => { %>
     <div class="author">
         <img src="<%= author.authorImagePath %>" alt="<%= author.name %> ">
-        <div><%= author.name %></div>
+        <div style="font-size: 1.5rem; font-weight: 700; letter-spacing: .7px; margin-bottom: 5px;"><%= author.name %>
+        </div>
         <div class="btn-grid">
             <a class="btn btn-dark" href="/authors/<%= author.id %>/edit ">Edit</a>
             <%- include('../partials/deleteForm', { url: `/authors/${author.id}`} ) %>
