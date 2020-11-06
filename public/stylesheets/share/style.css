@@ -258,3 +258,11 @@ h2 {
     align-items: center;
   }
 }
+
+.books-search-resutls {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  column-gap: 15px;
+  row-gap: 15px;
+  justify-items: center;
+}
