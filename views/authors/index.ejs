@@ -1,18 +1,22 @@
-<h2>Search Authors</h2>
-<form action="/authors" method="GET">
-    <label for="">Name</label>
-    <input type="text" name="name" value="<%= searchOptions.name %> ">
-    <button type="submit">Search</button>
+<h2 style="text-align: center; margin-top: 25px;">Search Authors</h2>
+<form class="search-form-author" action="/authors" method="GET">
+    <div class="search-author">
+        <input class="search-bar" type="text" name="name" value="<%= searchOptions.name %> ">
+        <button class="search-btn btn btn-dark" type="submit"><i class="fas fa-search"></i></button>
+    </div>
 </form>
 <br>
-<div class="author-container">
+<div class="author-container" style="margin-bottom: 50px;">
     <% authors.forEach(author => { %>
     <div class="author">
         <img src="<%= author.authorImagePath %>" alt="<%= author.name %> ">
         <div><%= author.name %></div>
-        <a href="/authors/<%= author.id %> ">View</a>
-        <a href="/authors/<%= author.id %>/edit ">Edit</a>
-        <%- include('../partials/deleteForm', { url: `/authors/${author.id}`} ) %>
+        <div class="btn-grid">
+            <a class="btn btn-dark" href="/authors/<%= author.id %>/edit ">Edit</a>
+            <%- include('../partials/deleteForm', { url: `/authors/${author.id}`} ) %>
+
+            <a class="btn btn-dark view" href="/authors/<%= author.id %> ">View</a>
+        </div>
     </div>
     <% }) %>
 

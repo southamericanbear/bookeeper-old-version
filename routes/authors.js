@@ -26,6 +26,7 @@ router.get("/new", (req, res) => {
 router.post("/", async (req, res) => {
   const author = new Author({
     name: req.body.name,
+    bio: req.body.bio,
   });
 
   saveAuthorPhoto(author, req.body.cover);
@@ -68,6 +69,10 @@ router.put("/:id", async (req, res) => {
   try {
     author = await Author.findById(req.params.id);
     author.name = req.body.name;
+    author.bio = req.body.bio;
+    if (req.body.cover != null && req.body.cover !== "") {
+      saveAuthorPhoto(author, req.body.cover);
+    }
     await author.save();
     res.redirect(`/authors/${author.id}`);
   } catch {

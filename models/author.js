@@ -6,6 +6,9 @@ const authorSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  bio: {
+    type: String,
+  },
   authorImage: {
     type: Buffer,
     required: true,
