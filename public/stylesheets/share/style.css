@@ -136,6 +136,12 @@ h2 {
   border-bottom-left-radius: 10px;
   border-right: none;
 }
+.search-author input:focus {
+  outline: none;
+  outline-color: none;
+  outline-style: none;
+  outline-width: 1px;
+}
 .search-author .btn {
   width: 10%;
   border-left: none;
@@ -158,4 +164,73 @@ h2 {
 .btn-grid .view {
   position: relative;
   left: 30px;
+}
+
+.form-row-name-and-bio {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+}
+.form-row-name-and-bio .name label {
+  font-weight: 700;
+}
+.form-row-name-and-bio .name input {
+  border: solid 2px black;
+  border-radius: 5px;
+}
+.form-row-name-and-bio .name input:focus {
+  outline: none;
+}
+.form-row-name-and-bio textarea {
+  width: 160px;
+  height: 300px;
+  border: solid 2px black;
+  border-radius: 10px;
+  resize: none;
+}
+.form-row-name-and-bio textarea:focus {
+  outline: none;
+}
+
+.form-item-name-and-img {
+  background-color: rgba(248, 248, 248, 0.336);
+  margin-right: 50px;
+}
+
+.form-row-img label {
+  font-weight: 700;
+}
+
+.form-item-bio {
+  background-color: rgba(248, 248, 248, 0.336);
+}
+.form-item-bio span {
+  font-weight: 700;
+}
+
+.btn-new-author {
+  display: flex;
+  justify-content: center;
+}
+.btn-new-author a {
+  margin-right: 10px;
+}
+
+.filepond--root {
+  font-family: "Oswald", sans-serif;
+  margin-bottom: 0;
+}
+
+.filepond {
+  width: 100%;
+}
+
+.filepond--panel-root {
+  background-color: rgba(190, 190, 190, 0.274);
+  border: 1px solid rgba(255, 255, 255, 0.274);
+}
+
+.filepond--drop-label {
+  color: black;
+  font-size: inherit;
 }
