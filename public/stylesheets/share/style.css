@@ -234,3 +234,27 @@ h2 {
   color: black;
   font-size: inherit;
 }
+
+.search-books {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 25px;
+}
+.search-books div {
+  display: flex;
+}
+.search-books label {
+  font-weight: 700;
+  width: 100px;
+}
+.search-books input {
+  width: 200px;
+}
+@media (max-width: 782px) {
+  .search-books {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
