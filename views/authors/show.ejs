@@ -1,18 +1,24 @@
-<h2><%= author.name %> </h2>
+<h2 style="margin: 25px auto; " class="author-name"><%= author.name %> </h2>
 <div class="photo-and-bio">
-    <img width="250" height="350" src="<%= author.authorImagePath %>" alt="">
+    <div class="photo-edit">
+        <img width="250" height="350" src="<%= author.authorImagePath %>" alt="">
+        <div class="edit-and-delete">
+            <a class="btn btn-dark" style="width: 60px; margin-right: 5px;"
+                href="/authors/<%= author.id %>/edit">Edit</a>
+            <%- include('../partials/deleteForm', { url: `/authors/${author.id}` }) %>
+        </div>
+    </div>
     <p><%= author.bio %> </p>
 </div>
-<div class="edit-and-delete">
-    <a href="/authors/<%= author.id %>/edit">Edit</a>
-    <%- include('../partials/deleteForm', { url: `/authors/${author.id}` }) %>
-</div>
 <% if(booksByAuthor.length > 0) {%>
-<h2>Books By Author</h2>
+<h2 class="h2-books-by-author">Books By Author</h2>
+<div class="books-by-author">
 
-<% booksByAuthor.forEach(book => { %>
-<a href="/books/<%= book.id %> "><img height="150" width="100" src="<%= book.coverImagePath %> " alt=""></a>
+    <% booksByAuthor.forEach(book => { %>
+    <a href="/books/<%= book.id %> "><img height="150" width="100" src="<%= book.coverImagePath %> " alt=""></a>
 
-<% }) %>
+    <% }) %>
 
-<% } %>
+    <% } %>
+
+</div>

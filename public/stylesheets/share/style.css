@@ -1,3 +1,6 @@
+@import "forms.css";
+@import "authorProfile.css";
+
 body {
   font-family: "Oswald", sans-serif;
 }
@@ -82,27 +85,40 @@ h2 {
   box-shadow: 0 0 0 0.2rem;
 }
 
-.recent-added-img, .author-container {
+.recent-added-img,
+.author-container {
   margin-top: 30px;
   display: grid;
   justify-content: center;
   grid-gap: 2rem;
   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
 }
-.recent-added-img .book, .recent-added-img .author, .author-container .book, .author-container .author {
+.recent-added-img .book,
+.recent-added-img .author,
+.author-container .book,
+.author-container .author {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.recent-added-img .book img, .recent-added-img .author img, .author-container .book img, .author-container .author img {
+.recent-added-img .book img,
+.recent-added-img .author img,
+.author-container .book img,
+.author-container .author img {
   width: 157px;
   height: 250px;
 }
-.recent-added-img .book .book-title, .recent-added-img .author .book-title, .author-container .book .book-title, .author-container .author .book-title {
+.recent-added-img .book .book-title,
+.recent-added-img .author .book-title,
+.author-container .book .book-title,
+.author-container .author .book-title {
   font-weight: 700;
   font-size: 1.5rem;
 }
-.recent-added-img .book .book-author, .recent-added-img .author .book-author, .author-container .book .book-author, .author-container .author .book-author {
+.recent-added-img .book .book-author,
+.recent-added-img .author .book-author,
+.author-container .book .book-author,
+.author-container .author .book-author {
   margin-bottom: 5px;
   font-weight: 700;
   font-size: 0.8rem;
@@ -164,32 +180,6 @@ h2 {
 .btn-grid .view {
   position: relative;
   left: 30px;
-}
-
-.form-row-name-and-bio {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 0.5rem;
-}
-.form-row-name-and-bio .name label {
-  font-weight: 700;
-}
-.form-row-name-and-bio .name input {
-  border: solid 2px black;
-  border-radius: 5px;
-}
-.form-row-name-and-bio .name input:focus {
-  outline: none;
-}
-.form-row-name-and-bio textarea {
-  width: 160px;
-  height: 300px;
-  border: solid 2px black;
-  border-radius: 10px;
-  resize: none;
-}
-.form-row-name-and-bio textarea:focus {
-  outline: none;
 }
 
 .form-item-name-and-img {
