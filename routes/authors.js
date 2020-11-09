@@ -29,7 +29,7 @@ router.post("/", async (req, res) => {
     bio: req.body.bio,
   });
 
-  saveAuthorPhoto(author, req.body.cover);
+  saveAuthorPhoto(author, req.body.authorImg);
 
   try {
     const newAuthor = await author.save();
@@ -70,8 +70,8 @@ router.put("/:id", async (req, res) => {
     author = await Author.findById(req.params.id);
     author.name = req.body.name;
     author.bio = req.body.bio;
-    if (req.body.cover != null && req.body.cover !== "") {
-      saveAuthorPhoto(author, req.body.cover);
+    if (req.body.authorImg != null && req.body.authorImg !== "") {
+      saveAuthorPhoto(author, req.body.authorImg);
     }
     await author.save();
     res.redirect(`/authors/${author.id}`);
@@ -102,12 +102,12 @@ router.delete("/:id", async (req, res) => {
   }
 });
 
-function saveAuthorPhoto(author, coverEncoded) {
-  if (coverEncoded == null) return;
-  const cover = JSON.parse(coverEncoded);
-  if (cover != null && imageMimeTypes.includes(cover.type)) {
-    author.authorImage = new Buffer.from(cover.data, "base64");
-    author.authorImageType = cover.type;
+function saveAuthorPhoto(author, authorImgEncoded) {
+  if (authorImgEncoded == null) return;
+  const authorImg = JSON.parse(authorImgEncoded);
+  if (authorImg != null && imageMimeTypes.includes(authorImg.type)) {
+    author.authorImage = new Buffer.from(authorImg.data, "base64");
+    author.authorImageType = authorImg.type;
   }
 }
 

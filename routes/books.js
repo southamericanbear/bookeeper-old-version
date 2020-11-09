@@ -41,7 +41,6 @@ router.post("/", async (req, res) => {
     pageCount: req.body.pageCount,
     description: req.body.description,
   });
-
   saveCover(book, req.body.cover);
 
   try {
@@ -52,7 +51,7 @@ router.post("/", async (req, res) => {
   }
 });
 
-// show book route
+// Show Book Route
 router.get("/:id", async (req, res) => {
   try {
     const book = await Book.findById(req.params.id).populate("author").exec();
@@ -62,7 +61,7 @@ router.get("/:id", async (req, res) => {
   }
 });
 
-// edit book route
+// Edit Book Route
 router.get("/:id/edit", async (req, res) => {
   try {
     const book = await Book.findById(req.params.id);
@@ -92,12 +91,12 @@ router.put("/:id", async (req, res) => {
     if (book != null) {
       renderEditPage(res, book, true);
     } else {
-      res.redirect("/");
+      redirect("/");
     }
   }
 });
 
-// delete book page
+// Delete Book Page
 router.delete("/:id", async (req, res) => {
   let book;
   try {
@@ -106,7 +105,7 @@ router.delete("/:id", async (req, res) => {
     res.redirect("/books");
   } catch {
     if (book != null) {
-      res.render("/book/show", {
+      res.render("books/show", {
         book: book,
         errorMessage: "Could not remove book",
       });
@@ -119,9 +118,11 @@ router.delete("/:id", async (req, res) => {
 async function renderNewPage(res, book, hasError = false) {
   renderFormPage(res, book, "new", hasError);
 }
+
 async function renderEditPage(res, book, hasError = false) {
   renderFormPage(res, book, "edit", hasError);
 }
+
 async function renderFormPage(res, book, form, hasError = false) {
   try {
     const authors = await Author.find({});
@@ -133,10 +134,9 @@ async function renderFormPage(res, book, form, hasError = false) {
       if (form === "edit") {
         params.errorMessage = "Error Updating Book";
       } else {
-        if (hasError) params.errorMessage = "Error Creating Book";
+        params.errorMessage = "Error Creating Book";
       }
     }
-
     res.render(`books/${form}`, params);
   } catch {
     res.redirect("/books");
