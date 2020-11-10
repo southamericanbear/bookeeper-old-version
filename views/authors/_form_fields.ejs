@@ -1,12 +1,17 @@
-<div>
-    <label for="">Name</label>
-    <input type="text" name="name" value="<%= author.name %>">
+<div class="form-row">
+    <div class="form-item">
+        <label for="">Name</label>
+        <input type="text" name="name" value="<%= author.name %>">
+    </div>
 </div>
-<div>
-    <label>Author Bio</label>
-    <textarea name="bio"><%= author.bio %></textarea>
-</div>
-<div>
-    <label>Author Photo</label>
-    <input type="file" name="cover" class="filepond">
+<div class="form-row">
+    <div class="form-item">
+        <label>Author Photo</label>
+        <input type="file" name="cover" class="filepond">
+    </div>
+    <div class="form-item">
+        <label>Author Bio</label>
+        <textarea name="bio"><%= author.bio %></textarea>
+    </div>
+
 </div>

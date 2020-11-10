@@ -1,35 +1,9 @@
-<h1 style="text-align: center; font-weight: 700; margin: 25px auto;">New Author</h1>
+<h2 style="text-align: center; font-weight: 700; margin: 25px auto;">New Author</h1>
 
-<form class="form-new-author" action="/authors" method="POST">
-
-    <div class="form-row-name-and-bio">
-        <div class="form-item-name-and-img">
-            <div class="name">
-                <label for="">Name</label>
-                <input type="text" name="name" value="<%= author.name %>">
-            </div>
-            <div class="form-row-img">
-                <div class="form-item form-item-no-grow">
-                    <label>Author Photo</label>
-                    <input type="file" name="authorImg" class="filepond">
-                </div>
-            </div>
+    <form class="form-new-author" action="/authors" method="POST">
+        <%- include('_form_fields') %>
+        <div class="btn-new-author">
+            <a class="btn btn-danger" href="/authors">Cancel</a>
+            <button class="btn btn-dark" type="submit">Create</button>
         </div>
-
-
-        <div class="form-item-bio">
-            <span>Author Bio</span>
-            <div class="author-bio">
-                <textarea name="bio"><%= author.bio %></textarea>
-            </div>
-        </div>
-    </div>
-
-
-
-
-    <div class="btn-new-author">
-        <a class="btn btn-danger" href="/authors">Cancel</a>
-        <button class="btn btn-dark" type="submit">Create</button>
-    </div>
-</form>
+    </form>

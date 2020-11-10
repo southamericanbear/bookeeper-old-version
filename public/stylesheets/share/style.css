@@ -207,25 +207,6 @@ h2 {
   margin-right: 10px;
 }
 
-.filepond--root {
-  font-family: "Oswald", sans-serif;
-  margin-bottom: 0;
-}
-
-.filepond {
-  width: 100%;
-}
-
-.filepond--panel-root {
-  background-color: rgba(190, 190, 190, 0.274);
-  border: 1px solid rgba(255, 255, 255, 0.274);
-}
-
-.filepond--drop-label {
-  color: black;
-  font-size: inherit;
-}
-
 .search-books {
   display: flex;
   flex-wrap: wrap;
@@ -256,4 +237,8 @@ h2 {
   column-gap: 15px;
   row-gap: 15px;
   justify-items: center;
+}
+
+.error-message {
+  color: red, 100%, 50%;
 }
